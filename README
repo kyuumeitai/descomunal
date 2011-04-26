@@ -1,0 +1,39 @@
+## ¿Alguna vez necesitaste una lista de las regiones, provincias y comunas de **Chile** en un formulario en WordPress?
+Descomunal se encarga de eso (o al menos cuando esté terminado lo hará).
+
+Los datos fueron extraidos desde http://www.lacosox.org/
+
+Versión 0.1:
+- Genera 3 tablas: Comunas, Provincias y Regiones en la base de datos de WordPress.
+- Funciones utilitarias.
+
+## Instalación 
+1. Baja el archivo compreso y ponlo en la carpeta wp-content/plugins.
+2. Activa el plugin. wp-admin > Plugins
+3. Usa las funciones especificadas más abajo.
+
+## Uso 
+- Versión 0.1:
+
+`dc_get_all($type);`
+
+Devuelve un objeto de todos los IDs y los nombres de cada tabla. Por defecto llama a las comunas.
+
+Ejemplo:
+
+				<select id="form-region">
+					<option value="">Seleccione</option>
+					<?php 
+					if(function_exists('dc_get_all')) $regiones = dc_get_all('regiones');
+					if(!empty($regiones)||isset($regiones)):
+						foreach($regiones as $region): ?>
+							<option value="<?php echo $region->id;?>"><?php echo $region->region_nombre;?></option>
+						<?php endforeach;
+					endif;
+					?>
+				</select>
+
+
+
+
+
