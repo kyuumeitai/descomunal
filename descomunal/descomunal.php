@@ -1,12 +1,31 @@
 <?php
 /*
 Plugin Name: Descomunal
-Plugin URI: http://blog.alex.acunaviera.com
+Plugin URI: http://github.com/kyuumeitai/descomunal
 Description: Genera DB con las regiones, provincias, comunas actualizadas al 2010. Basado en scripts desde http://www.lacosox.org/
 Author: Álex Acuña Viera
-Version: 0.1
+Version: 0.2
 Author URI: http://blog.alex.acunaviera.com
-*/
+
+**************************************************************************
+
+Copyright (C) 2011 Kyuumeitai
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+**************************************************************************/
+
 
 function descomunal_install()
 {
@@ -15,18 +34,15 @@ function descomunal_install()
 	if (false === $option) {
 		# setup
 		$option = array();
-		$option['dbtable_region'] = "region"; 
-		$option['dbtable_provincia'] = "provincia"; 		
-		$option['dbtable_comuna'] = "comuna";	
 		$option['uninstall'] = false;
 		
 		add_option('descomunal', $option);
 
 		# tablas
 	    global $wpdb;
-	    $tabla_region = $wpdb->prefix.'_descomunal_'.$option['dbtable_region'];
-	    $tabla_provincia = $wpdb->prefix.'_descomunal_'.$option['dbtable_provincia'];
-	    $tabla_comuna = $wpdb->prefix.'_descomunal_'.$option['dbtable_comuna'];	    
+	    $tabla_region = $wpdb->prefix.'_descomunal_region';
+	    $tabla_provincia = $wpdb->prefix.'_descomunal_provincia';
+	    $tabla_comuna = $wpdb->prefix.'_descomunal_comuna';	    
 
 		    $structure = array();
 		    
@@ -491,9 +507,9 @@ function descomunal_uninstaller() {
 
 		global $wpdb;
 		
-	    $tabla_region = $wpdb->prefix.'_descomunal_'.$option['dbtable_region'];
-	    $tabla_provincia = $wpdb->prefix.'_descomunal_'.$option['dbtable_provincia'];
-	    $tabla_comuna = $wpdb->prefix.'_descomunal_'.$option['dbtable_comuna'];   		
+	    $tabla_region = $wpdb->prefix.'_descomunal_region';
+	    $tabla_provincia = $wpdb->prefix.'_descomunal_provincia';
+	    $tabla_comuna = $wpdb->prefix.'_descomunal_comuna';   		
 		
 		$wpdb->query("DROP TABLE " . $tabla_region);
 		$wpdb->query("DROP TABLE " . $tabla_provincia);
