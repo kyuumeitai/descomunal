@@ -1,16 +1,16 @@
 <?php
 /*
-Plugin Name: Multinet Descomunal
-Plugin URI: http://multinet.cl
+Plugin Name: Descomunal
+Plugin URI: http://blog.alex.acunaviera.com
 Description: Genera DB con las regiones, provincias, comunas actualizadas al 2010. Basado en scripts desde http://www.lacosox.org/
 Author: Álex Acuña Viera
 Version: 0.1
 Author URI: http://blog.alex.acunaviera.com
 */
 
-function mnet_descomunal_install()
+function descomunal_install()
 {
-	$option = get_option('mnet_descomunal');
+	$option = get_option('descomunal');
 	
 	if (false === $option) {
 		# setup
@@ -20,7 +20,7 @@ function mnet_descomunal_install()
 		$option['dbtable_comuna'] = "comuna";	
 		$option['uninstall'] = false;
 		
-		add_option('mnet_descomunal', $option);
+		add_option('descomunal', $option);
 
 		# tablas
 	    global $wpdb;
@@ -486,8 +486,8 @@ function mnet_descomunal_install()
 	}
 }
 
-function mnet_descomunal_uninstaller() {
-	$option = get_option('mnet_descomunal');
+function descomunal_uninstaller() {
+	$option = get_option('descomunal');
 
 		global $wpdb;
 		
@@ -499,21 +499,21 @@ function mnet_descomunal_uninstaller() {
 		$wpdb->query("DROP TABLE " . $tabla_provincia);
 		$wpdb->query("DROP TABLE " . $tabla_comuna);		
 
-		delete_option('mnet_descomunal');
+		delete_option('descomunal');
 }
 
 # register hooks
-register_activation_hook( __FILE__, 'mnet_descomunal_install'); 
-register_deactivation_hook( __FILE__, 'mnet_descomunal_uninstaller');
+register_activation_hook( __FILE__, 'descomunal_install'); 
+register_deactivation_hook( __FILE__, 'descomunal_uninstaller');
 
-add_action('admin_menu', 'mnet_descomunal_menu');
+add_action('admin_menu', 'descomunal_menu');
 
-function mnet_descomunal_menu() {
+function descomunal_menu() {
   # http://codex.wordpress.org/Adding_Administration_Menus
-  add_submenu_page('edit.php', 'Multinet Descomunal Menu', 'Descomunal menu', 'manage_options', 'mnet_descomunal', 'mnet_descomunal_options');
+  add_submenu_page('edit.php', 'Descomunal Menu', 'Descomunal menu', 'manage_options', 'descomunal', 'descomunal_options');
 } 
 
-function mnet_descomunal_options() {
+function descomunal_options() {
 	if (!current_user_can('manage_options'))  {
 		wp_die( __('You do not have sufficient permissions to access this page.') );
 	}
