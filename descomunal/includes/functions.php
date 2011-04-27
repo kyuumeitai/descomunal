@@ -28,7 +28,7 @@ function dc_get_col($type=''){
 	        $type = 'comuna';
 		}
 		
-	$option = get_option('mnet_descomunal');	
+	$option = get_option('descomunal');	
 	$tabla = $wpdb->prefix.'descomunal_'.$option['dbtable_'.$type];
 	$output = $wpdb->get_col("SELECT ".$type."_nombre FROM $tabla");
 	return $output;
@@ -48,7 +48,7 @@ function dc_get_all($type=''){
 	        $type = 'comuna';
 		}
 		
-	$option = get_option('mnet_descomunal');	
+	$option = get_option('descomunal');	
 	$tabla = $wpdb->prefix.'descomunal_'.$option['dbtable_'.$type];
 	$output = $wpdb->get_results("SELECT * FROM $tabla");
 	return $output;
