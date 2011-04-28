@@ -17,12 +17,8 @@ TODOs:
 
 */
 
-function dc_tabla($type){
-	global $wpdb;
-	$option = get_option('descomunal');	
-	$tabla = $wpdb->prefix.'descomunal_'.$type;
-	return $tabla;
-	}
+include "int-functions.php";
+
 
 /*
 dc_get_col($type)
