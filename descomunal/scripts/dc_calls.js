@@ -1,14 +1,17 @@
 jQuery(document).ready(function($) {
    	$('#form-region').change(function(){
+   		alert('henge!');
    		var t = $(this);
-   		$.ajax({
-			'type'		: 'post',
-			'cache'		: false,
-			'url'		: '../includes/process.php',
-			'data'		: t.attr('value'),
-			'success'	: function(data) {
-				alert('guardado, devolvió: ' + data);
-				}
-   			});
-   		});
-	});
+		$.post(
+		    dc_script.uri,
+		    {
+		        action : 'dc-submit',
+		        valor : t.attr('value')
+		    },
+		    function( response ) {
+		        alert( response );
+		    }
+		);  
+
+   	});
+});

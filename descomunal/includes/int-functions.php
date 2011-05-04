@@ -19,25 +19,24 @@ function dc_tabla($type){
 	}
 
 function dc_script() {
-	$baseuri = plugins_url('descomunal'); ?>
-	<script type="text/javascript">
-	jQuery(document).ready(function($) {
-	   	$('#form-region').change(function(){
-	   		var t = $(this);
-	   		$.ajax({
-				'type'		: 'post',
-				'cache'		: false,
-				'url'		: '<?php echo $baseuri;?>/includes/process.php',
-				'data'		: t.attr('value'),
-				'success'	: function(data) {
-					alert('guardado, devolvió: ' + data);
-					}
-	   			});
-	   		});
-		});		
-	</script>
-	<?php }    
+	wp_enqueue_script( 'dc_script', plugins_url('descomunal/scripts/dc_calls.js'), array( 'jquery' ) );
+	wp_localize_script( 'dc_script', 'dc_script', array( 'uri' => admin_url( 'admin-ajax.php' ) ) );
+	}
+ 
+function dc_submit() {
+    $valor = $_POST['valor'];
+    $response = json_encode( array(
+    	'success' => true,
+    	'aidi' => 'probandooooooooo',
+    	'valor' => $valor
+    	) );
+    header( "Content-Type: application/json" );
+    echo $response;
+    exit;
+	}
 
-add_action('wp_print_scripts', 'dc_script');
+add_action( 'wp_ajax_nopriv_dc-submit', 'dc_submit' );
+add_action( 'wp_ajax_dc-submit', 'dc_submit' );
+add_action('init', 'dc_script');	
 
 ?>
