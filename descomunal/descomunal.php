@@ -3,13 +3,13 @@
 Plugin Name: Descomunal
 Plugin URI: http://github.com/kyuumeitai/descomunal
 Description: Genera DB con las regiones, provincias, comunas actualizadas al 2010. Basado en scripts desde http://www.lacosox.org/
-Author: Álex Acuña Viera
+Author: Álex Acuña Viera (@kyuumeitai)
 Version: 0.2
 Author URI: http://blog.alex.acunaviera.com
 
 **************************************************************************
 
-Copyright (C) 2011 Kyuumeitai
+Copyright (C) 2011 Álex Acuña Viera
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -512,7 +512,7 @@ function descomunal_uninstaller() {
 		
 		$wpdb->query("DROP TABLE " . $tabla_region);
 		$wpdb->query("DROP TABLE " . $tabla_provincia);
-		$wpdb->query("DROP TABLE " . $tabla_comuna);		
+		$wpdb->query("DROP TABLE " . $tabla_comuna);	
 
 		delete_option('descomunal');
 }
