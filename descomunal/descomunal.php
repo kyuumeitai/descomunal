@@ -39,9 +39,9 @@ function descomunal_install()
 
 		# tablas
 	    global $wpdb;
-	    $tabla_region = $wpdb->prefix.'_descomunal_region';
-	    $tabla_provincia = $wpdb->prefix.'_descomunal_provincia';
-	    $tabla_comuna = $wpdb->prefix.'_descomunal_comuna';	    
+	    $tabla_region = $wpdb->prefix.'descomunal_region';
+	    $tabla_provincia = $wpdb->prefix.'descomunal_provincia';
+	    $tabla_comuna = $wpdb->prefix.'descomunal_comuna';	    
 
 		    $structure = array();
 		    
@@ -506,9 +506,9 @@ function descomunal_uninstaller() {
 
 		global $wpdb;
 		
-	    $tabla_region = $wpdb->prefix.'_descomunal_region';
-	    $tabla_provincia = $wpdb->prefix.'_descomunal_provincia';
-	    $tabla_comuna = $wpdb->prefix.'_descomunal_comuna';   		
+	    $tabla_region = $wpdb->prefix.'descomunal_region';
+	    $tabla_provincia = $wpdb->prefix.'descomunal_provincia';
+	    $tabla_comuna = $wpdb->prefix.'descomunal_comuna';   		
 		
 		$wpdb->query("DROP TABLE " . $tabla_region);
 		$wpdb->query("DROP TABLE " . $tabla_provincia);
