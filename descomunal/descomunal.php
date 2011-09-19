@@ -2,10 +2,11 @@
 /*
 Plugin Name: Descomunal
 Plugin URI: http://github.com/kyuumeitai/descomunal
-Description: Genera DB con las regiones, provincias, comunas actualizadas al 2010. Basado en scripts desde http://www.lacosox.org/
+Description: Genera DB con las regiones, provincias, comunas actualizadas al 2010. Basado en scripts desde https://github.com/knxroot/BDCUT_CL
 Author: Álex Acuña Viera (@kyuumeitai)
-Version: 0.2
+Version: 0.3
 Author URI: http://blog.alex.acunaviera.com
+Última actualización: 19/09/2011
 
 **************************************************************************
 
@@ -180,7 +181,7 @@ function descomunal_install()
 					(4102, 'Coquimbo', 41),
 					(4103, 'Andacollo', 41),
 					(4104, 'La Higuera', 41),
-					(4105, 'Paiguano', 41),
+					(4105, 'Paihuano', 41),
 					(4106, 'Vicuña', 41),
 					(4201, 'Illapel', 42),
 					(4202, 'Canela', 42),
@@ -209,7 +210,7 @@ function descomunal_install()
 					(5404, 'Petorca', 54),
 					(5405, 'Zapallar', 54),
 					(5501, 'Quillota', 55),
-					(5502, 'Calera', 55),
+					(5502, 'La Calera', 55),
 					(5503, 'Hijuelas', 55),
 					(5504, 'La Cruz', 55),
 					(5506, 'Nogales', 55),
@@ -221,7 +222,7 @@ function descomunal_install()
 					(5606, 'Santo Domingo', 56),
 					(5701, 'San Felipe', 57),
 					(5702, 'Catemu', 57),
-					(5703, 'Llaillay', 57),
+					(5703, 'Llay Llay', 57),
 					(5704, 'Panquehue', 57),
 					(5705, 'Putaendo', 57),
 					(5706, 'Santa María', 57),
@@ -408,9 +409,9 @@ function descomunal_install()
 					(10402, 'Futaleufú', 104),
 					(10403, 'Hualaihué', 104),
 					(10404, 'Palena', 104),
-					(11101, 'Coihaique', 111),
+					(11101, 'Coyhaique', 111),
 					(11102, 'Lago Verde', 111),
-					(11201, 'Aisén', 112),
+					(11201, 'Aysén', 112),
 					(11202, 'Cisnes', 112),
 					(11203, 'Guaitecas', 112),
 					(11301, 'Cochrane', 113),
