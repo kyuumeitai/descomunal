@@ -1,7 +1,10 @@
 ## ¿Alguna vez necesitaste una lista de las regiones, provincias y comunas de **Chile** en un formulario en WordPress?
 Descomunal se encarga de eso (o al menos cuando esté terminado lo hará).
 
-Los datos fueron extraidos desde http://www.lacosox.org/
+Los datos fueron extraidos desde https://github.com/knxroot/BDCUT_CL (ACTUALIZACIÓN )
+
+Versión 0.1.2:
+- Se realizó una actualización a la versión 0.2 de la fuente de datos originalmente publicada en http://www.lacosox.org (ver https://github.com/knxroot/BDCUT_CL/wiki/changelog). El proyecto que contenía la fuente de datos base migró ahora a https://github.com/knxroot/BDCUT_CL.
 
 Versión 0.1:
 - Genera 3 tablas: Comunas, Provincias y Regiones en la base de datos de WordPress.
